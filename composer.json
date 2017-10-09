@@ -1,0 +1,29 @@
+{
+  "name": "zsxsoft/php-w3c-validator",
+  "description": "The PHP binding of vnu.jar (The Nu Html Checker) Edit",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "zsx",
+      "email": "zsx@zsxsoft.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.6.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Zsxsoft\\W3CValidator\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.0"
+  }
+}
