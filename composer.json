@@ -1,6 +1,6 @@
 {
   "name": "zsxsoft/php-w3c-validator",
-  "description": "The PHP binding of vnu.jar (The Nu Html Checker) Edit",
+  "description": "The PHP binding of vnu.jar (The Nu Html Checker)",
   "type": "library",
   "license": "MIT",
   "authors": [
