@@ -1,8 +1,12 @@
 php-w3c-validator
 ============================
 
-> _Wrapper for [The Nu Html Checker (v.Nu)](https://github.com/validator/validator) 
+[![Latest Stable Version](https://poser.pugx.org/zsxsoft/php-w3c-validator/v/stable.png)](https://packagist.org/packages/zsxsoft/php-w3c-validator)
+[![Packagist](https://img.shields.io/packagist/dt/zsxsoft/php-w3c-validator.svg)](https://packagist.org/packages/zsxsoft/php-w3c-validator)
 
+---
+> Wrapper for [The Nu Html Checker (v.Nu)](https://github.com/validator/validator)  
+> Current version: 17.11.1
 ---
 
 ## Attention
@@ -22,7 +26,6 @@ use Zsxsoft\W3CValidator\W3CValidator;
 
 $validator = new W3CValidator();
 print_r($validator->data('<html></html>')->run());
-}
 ```
 
 Result
@@ -108,7 +111,7 @@ Run the validator with custom argument
 
 #### Arguments
 * $argument **mixed**
-* $callback **mixed** - &lt;p&gt;callable callback for piping&lt;/p&gt;
+* $callback **callable** - callback for piping
 
 
 ### Command Line Arguments
