@@ -8,6 +8,6 @@ class BasicTest extends TestCase
     public function testRun()
     {
         $validator = new W3CValidator();
-        var_dump($validator->data('<html></html>')->run());
+        print_r($validator->data('<html></html>')->run());
     }
 }
