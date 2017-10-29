@@ -72,9 +72,13 @@ class W3CValidator
      * W3CValidator constructor.
      * @param string $jarPath
      */
-    public function __construct($jarPath = 'vnu.jar')
+    public function __construct($jarPath = NULL)
     {
-        $this->_jar = $jarPath;
+        if (is_null($jarPath)) {
+            $this->_jar = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vnu.jar';
+        } else {
+            $this->_jar = $jarPath;
+        }
         $this->format('json');
     }
 
