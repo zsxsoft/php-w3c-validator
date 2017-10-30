@@ -166,10 +166,12 @@ class W3CValidator
             } else {
                 fwrite($pipes[0], $this->_stdin);
                 fclose($pipes[0]);
-                $returnString = stream_get_contents($pipes[1]);
-                fclose($pipes[1]);
+                stream_set_blocking($pipes[1], 0);
+                stream_set_blocking($pipes[2], 0);
                 $errorString = stream_get_contents($pipes[2]);
                 fclose($pipes[2]);
+                $returnString = stream_get_contents($pipes[1]);
+                fclose($pipes[1]);
             }
 
             array_walk($pipes, function ($pipe) {
