@@ -185,8 +185,12 @@ class W3CValidator
             } else {
                 fwrite($pipes[0], $this->_stdin);
                 fclose($pipes[0]);
-                $returnString = stream_get_contents($pipes[1]);
+                // Notes:
+                // In Windows, we have to read STDERR firstly.
+                // because in most of time, STDOUT will be empty
+                // but we cannot detect it, so PHP will block on stream_get_contents
                 $errorString = stream_get_contents($pipes[2]);
+                $returnString = stream_get_contents($pipes[1]);
             }
 
             array_walk($pipes, function ($pipe) {

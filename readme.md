@@ -20,7 +20,7 @@ php-w3c-validator
 
 ## Test
 
-``phpunit --bootstrap vendor/autoload.php tests``
+``phpunit``
 
 ## Usage
 
