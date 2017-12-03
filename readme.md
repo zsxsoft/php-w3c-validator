@@ -18,7 +18,20 @@ php-w3c-validator
 
 ``composer require zsxsoft/php-w3c-validator``
 
+## Test
+
+``phpunit --bootstrap vendor/autoload.php tests``
+
 ## Usage
+
+__Recommend__
+```php
+<?php
+use Zsxsoft\W3CValidator\W3CValidator;
+
+$validator = new W3CValidator();
+print_r($validator->fileName('http://localhost')->run());
+```
 
 ```php
 <?php
@@ -122,7 +135,7 @@ See https://github.com/validator/validator for help.
 
      $this|string Zsxsoft\W3CValidator\W3CValidator::asciiquotes()
 
-Gets or specifies whether ASCII quotation marks are substituted for Unicode smart quotation marks in messages.
+Specifies whether ASCII quotation marks are substituted for Unicode smart quotation marks in messages.
 
 
 
@@ -130,7 +143,7 @@ Gets or specifies whether ASCII quotation marks are substituted for Unicode smar
 
      $this|string Zsxsoft\W3CValidator\W3CValidator::errors_only()
 
-Gets or specifies that only error-level messages and non-document-error messages are reported (so that warnings and info messages are not reported).
+Specifies that only error-level messages and non-document-error messages are reported (so that warnings and info messages are not reported).
 
 
 
@@ -138,34 +151,34 @@ Gets or specifies that only error-level messages and non-document-error messages
 
      $this|string Zsxsoft\W3CValidator\W3CValidator::Werror()
 
-Gets or makes the checker exit non-zero if any warnings are encountered (even if there are no errors).
+Makes the checker exit non-zero if any warnings are encountered (even if there are no errors).
 
 
 #### exit_zero_always
 
      $this|string Zsxsoft\W3CValidator\W3CValidator::exit_zero_always()
 
-Gets or makes the checker exit zero even if errors are reported for any documents.
+Makes the checker exit zero even if errors are reported for any documents.
 
 #### filterfile
 
      $this|string Zsxsoft\W3CValidator\W3CValidator::filterfile()
 
-Gets or specifies a filename. Each line of the file contains either a regular expression or starts with "#" to indicate the line is a comment. Any error message or warning message that matches a regular expression in the file is filtered out (dropped/suppressed).
+Specifies a filename. Each line of the file contains either a regular expression or starts with "#" to indicate the line is a comment. Any error message or warning message that matches a regular expression in the file is filtered out (dropped/suppressed).
 
 
 #### filterpattern
 
      $this|string Zsxsoft\W3CValidator\W3CValidator::filterpattern()
 
-Gets or specifies a regular-expression pattern. Any error message or warning message that matches the pattern is filtered out (dropped/suppressed).
+Specifies a regular-expression pattern. Any error message or warning message that matches the pattern is filtered out (dropped/suppressed).
 
 
 #### format
 
      $this|string Zsxsoft\W3CValidator\W3CValidator::format()
 
-Gets or specifies the output format for reporting the results.
+Specifies the output format for reporting the results.
 
 * Default: json
 
@@ -204,7 +217,7 @@ Forces all documents to be be parsed in buffered mode instead of streaming mode 
 
      $this|string Zsxsoft\W3CValidator\W3CValidator::verbose()
 
-Gets or specifies "verbose" output. (Currently this just means that the names of files being checked are written to stdout.)
+Specifies "verbose" output. (Currently this just means that the names of files being checked are written to stdout.)
 
 
 
