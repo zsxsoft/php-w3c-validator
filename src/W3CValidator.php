@@ -55,10 +55,16 @@ class W3CValidator
      * @var string stdin data
      */
     protected $_stdin = '';
+
     /**
      * @var bool check is use stdin
      */
     protected $_fileName = '-';
+
+    /**
+     * @var string Java argument
+     */
+    protected $_javaArgument = '';
 
 
     protected $_descriptorspec = [
@@ -126,6 +132,18 @@ class W3CValidator
     }
 
     /**
+     * Gets or sets Java argument
+     * @param string $data
+     * @return $this|string
+     */
+    public function javaArgument($data = '')
+    {
+        if ($data == '') return $this->_javaArgument;
+        $this->_javaArgument = $data;
+        return $this;
+    }
+
+    /**
      * Run the validator
      * @return mixed|array
      * @throws ValidatorException
@@ -160,7 +178,7 @@ class W3CValidator
     public function exec($argument, callable $callback = NULL)
     {
         $pipes = [];
-        $process = proc_open("java -jar {$this->_jar} $argument", $this->_descriptorspec, $pipes);
+        $process = proc_open("java {$this->_javaArgument} -jar {$this->_jar} $argument", $this->_descriptorspec, $pipes);
         if (is_resource($process)) {
             if (!is_null($callback)) {
                 $errorString = $returnString = $callback($pipes);

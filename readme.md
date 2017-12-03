@@ -122,6 +122,14 @@ Run the validator
 Run the validator with custom argument
 
 
+### javaArgument
+
+    $this|string Zsxsoft\W3CValidator\W3CValidator::javaArgument(string $data)
+
+Gets or sets Java argument
+
+
+
 #### Arguments
 * $argument **mixed**
 * $callback **callable** - callback for piping
